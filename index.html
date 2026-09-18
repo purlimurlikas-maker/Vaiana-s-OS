@@ -9,30 +9,9 @@
     <link rel="stylesheet" href="style.css" />
   </head>
 
-  <body style="background-image: url('https://i.pinimg.com/736x/8e/2f/e1/8e2fe165614121ec44155028cb334aa1.jpg'); background-size: cover;  height: 100vh">
-  <header>
-       <h1>VaianaOS</h1>
-  </header>
-
- <p id="timeElement">
-      Time
-    </p>
-
-  <script>
-
-    function updateTime() {
-   var currentTime = new Date().toLocaleString();
-    var timeText = document.querySelector("#timeElement");
-    timeText.innerHTML = currentTime
-    }
-    setInterval(function () {
-  document.querySelector("#timeElement").innerHTML = new Date().toLocaleString();
-}, 1000);
-</script>
-
-  <div id="welcome" class="Welcomepage">
+<div id="welcome" class="Welcomepage">
     <p id="welcomeheader"> 
-		Handle
+		<img class="headerpic" src="https://i.pinimg.com/736x/de/74/c9/de74c99ce6ef2d12f86a52b0c7916e6c.jpg"/>
 	</p>
     <h2>Welcome to VaianaOS</h2>
     <p id="introduction">This is a WebOS made about Vaiana.</p>
@@ -46,6 +25,22 @@
     <img id="pic4" src="https://i.pinimg.com/originals/1a/b4/d6/1ab4d649001603281fd1b3418969ab27.gif">
   </div>
 </div>
+
+
+  <body style="background-image: url('https://i.pinimg.com/736x/8e/2f/e1/8e2fe165614121ec44155028cb334aa1.jpg'); background-size: cover;  height: 100vh">
+  <header>
+       <h1>VaianaOS</h1>
+  </header>
+
+ <p id="timeElement">
+      Time
+    </p>
+
+  <script>
+  setInterval(() => {
+    document.querySelector("#timeElement").innerHTML = new Date().toLocaleString();
+  }, 1000);
+</script>
 
 <script src="script.js"></script>
 

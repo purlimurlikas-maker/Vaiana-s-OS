@@ -1,43 +1,75 @@
 body {
   background-color: #cafbff;
-  font-family: 'MoanaFont', sans-serif; font-size: 17px;
+  font-family: 'MoanaFont', sans-serif;
+  font-size: 17px;
   margin: 0;
   padding: 0;
   position: relative;
   color: #272727;
 }
 
-h1 { color: #002f4f; font-family: 'Lobster 2' ; ; font-weight: 900; font-style: bold; text-align: center; font-size: 50px }
-h2 { color: #002f4f; font-family: 'Lobster 2'; font-weight: 900; font-style: italic; font-style: bold; text-align: center; font-size: 35px }
-nav { text-align: center; }
-.normal-text { color: #003559; font-family: 'Lobster 2'; font-weight: 900; font-style: italic; text-align: justify; font-size: clamp(1rem, 2vw, 1.5rem); }
+h1 {
+  color: #002f4f;
+  font-family: 'Lobster 2';
+  font-weight: 900;
+  text-align: center;
+  font-size: 50px;
+}
+
+h2 {
+  color: #002f4f;
+  font-family: 'Lobster 2';
+  font-weight: 900;
+  font-style: italic;
+  text-align: center;
+  font-size: 35px;
+}
+
+.Welcomepage {
+  border: 3px solid #ce491c;
+  width: 45rem;
+  padding: 15px;
+  border-radius: 12px;
+  position: absolute;
+  top: 20vh;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #cafbff;
+}
+
+.window-header {
+  cursor: move;
+  user-select: none;
+  padding: 6px 10px;
+  margin: -15px -15px 10px -15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.25);
+  border-top-left-radius: 9px;
+  border-top-right-radius: 9px;
+  font-weight: bold;
+}
+
+.headerpic {
+    margin: 10px; width: 50px; border-radius: 30px;
+    }
+
+#timeElement {
+  text-align: center;
+  font-weight: bold;
+}
 
 #pic1 {
-    border: 3px solid #ce491c; border-radius: 12px; width: 16rem; margin:10px
+    border: solid #ce491c; border-radius: 15px; width: 18rem; margin: 10px;
     }
 
 #pic2 {
- border: 3px solid #ce491c; border-radius: 12px; width: 25rem; margin:10px
- }
+    border: solid #ce491c; border-radius: 15px; width: 23rem; margin: 10px;
+    }
 
 #pic3 {
-    border: 3px solid #ce491c; border-radius: 12px; width: 20rem; margin:10px
+    border: solid #ce491c; border-radius: 15px; width: 20rem; margin: 10px;
     }
 
 #pic4 {
-    border: 3px solid #ce491c; border-radius: 12px; width: 20rem; margin:10px
+    border: solid #ce491c; border-radius: 15px; width: 20rem; margin: 10px;
     }
-
-#quote1, #quote2 {
-    border: 3px solid #40b4fb; border-radius: 12px; width: 20rem; margin:10px; background-color: #c59b79; padding: 10px;
-    }
-
-.Welcomepage {
-    border: 3px solid #ce491c; width: 45rem; padding: 15px; border-radius: 12px; margin: 10px; position: absolute; top: 100%; left: 50%; transform: translate(-50%, -50%); background-color: #cafbff;
-   }
-
-#timeElement {
-    border: 3px solid #40b4fb; border-radius: 12px; width: 20rem; margin:10px; background-color: #c59b79; padding: 10px; 
-    }
-
-
