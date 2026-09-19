@@ -1,16 +1,17 @@
 body {
   background-color: #cafbff;
-  font-family: 'MoanaFont', sans-serif;
+  font-family: 'Lobster Two', sans-serif;
   font-size: 17px;
   margin: 0;
   padding: 0;
   position: relative;
   color: #272727;
+
 }
 
 h1 {
   color: #002f4f;
-  font-family: 'Lobster 2';
+  font-family: 'Lobster Two';
   font-weight: 900;
   text-align: center;
   font-size: 50px;
@@ -18,7 +19,16 @@ h1 {
 
 h2 {
   color: #002f4f;
-  font-family: 'Lobster 2';
+  font-family: 'Lobster Two';
+  font-weight: 900;
+  font-style: italic;
+  text-align: center;
+  font-size: 35px;
+}
+
+text {
+  color: #002f4f;
+  font-family: 'Lobster Two';
   font-weight: 900;
   font-style: italic;
   text-align: center;
@@ -35,6 +45,8 @@ h2 {
   left: 50%;
   transform: translateX(-50%);
   background-color: #cafbff;
+  display: block;
+  z-index: 10;
 }
 
 .window-header {
@@ -73,3 +85,93 @@ h2 {
 #pic4 {
     border: solid #ce491c; border-radius: 15px; width: 20rem; margin: 10px;
     }
+
+
+#welcomeclose {
+  position: absolute;
+  top: 0px;
+  right: 14px;
+  z-index: 4;
+  cursor: pointer;
+  background-color: #ce491c;
+  border-radius: 10px;
+  width: 20px;
+  height: 20px;
+  margin: 15px;
+  }
+
+  #welcomeopen {
+  position: absolute;
+  top: 0px;
+  right: 14px;
+  z-index: 4;
+  cursor: pointer;
+  background-color: #cafbff;
+  border: 3px solid #40b4fb;
+  border-radius: 10px;
+  width:7.5rem;
+  height: 1.2rem;
+  padding: 10px;
+  text-align: center;
+  font-weight: 700;
+  }
+
+.vaiana-app-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  border: 3px solid #40b4fb;
+  }
+
+.Vaianaapp.selected .vaiana-app-icon,
+#vaianaAppIcon.selected .vaiana-app-icon {
+  border-color: #cafbff;
+  box-shadow: 0 0 0 6px rgba(255,69,0,0.12);
+}
+
+.Vaianaapp-window {
+  border: 3px solid #ce491c;
+  width: min(45rem, calc(100vw - 32px));
+  max-height: calc(100vh - 120px);
+  padding: 15px 15px 0;
+  border-radius: 12px;
+  position: absolute;
+  top: 20vh;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #cafbff;
+  display: none;
+  z-index: 100;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.window-content {
+  max-height: calc(100vh - 170px);
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+#Vaianaapp-windowclose {
+  position: absolute;
+  top: 0px;
+  right: 14px;
+  z-index: 4;
+  cursor: pointer;
+  background-color: #ce491c;
+  border-radius: 10px;
+  width: 20px;
+  height: 20px;
+  margin: 15px;
+  display: block;
+}
+
+.welcome-content {
+  max-height: calc(100vh - 170px);
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.app-picture {
+    border: solid #ce491c; border-radius: 15px; width: 18rem; margin: 10px;
+}
