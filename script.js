@@ -3,7 +3,7 @@ var biggestIndex = 100;
 function openWindowById(id) {
   const el = document.getElementById(id);
   if (!el) return;
-  el.style.display = 'block';
+  el.style.display = id === 'Vaianaapp-window' ? 'flex' : 'block';
   el.style.left = '50%';
   el.style.top = '20vh';
   el.style.transform = 'translateX(-50%)';
@@ -13,6 +13,10 @@ function closeWindowById(id) {
   const el = document.getElementById(id);
   if (!el) return;
   el.style.display = 'none';
+
+  if (id === 'Vaianaapp-window' && vaianaApp) {
+    vaianaApp.classList.remove('selected');
+  }
 }
 
 const welcomeOpenBtn = document.getElementById('welcomeopen');
@@ -20,24 +24,21 @@ const welcomeCloseBtn = document.getElementById('welcomeclose');
 if (welcomeOpenBtn) welcomeOpenBtn.addEventListener('click', () => openWindowById('welcome'));
 if (welcomeCloseBtn) welcomeCloseBtn.addEventListener('click', (e) => { e.stopPropagation(); closeWindowById('welcome'); });
 
-// Prevent clicks on the close button from starting window drag
 if (welcomeCloseBtn) {
   welcomeCloseBtn.addEventListener('mousedown', (e) => e.stopPropagation());
   welcomeCloseBtn.addEventListener('pointerdown', (e) => e.stopPropagation());
 }
 
-const vaianaIcon = document.getElementById('vaianaAppIcon');
+const vaianaApp = document.getElementById('vaianaAppIcon');
 const vaianaWindowClose = document.getElementById('Vaianaapp-windowclose');
-if (vaianaIcon) {
-  vaianaIcon.addEventListener('click', () => {
-    
-    vaianaIcon.classList.toggle('selected');
-    
+
+if (vaianaApp) {
+  vaianaApp.addEventListener('click', () => {
+    vaianaApp.classList.add('selected');
     openWindowById('Vaianaapp-window');
   });
 }
-// Prevent the close button from triggering the window drag handler,
-// and wire the click to actually close the window.
+
 if (vaianaWindowClose) {
   vaianaWindowClose.addEventListener('mousedown', (e) => e.stopPropagation());
   vaianaWindowClose.addEventListener('pointerdown', (e) => e.stopPropagation());
@@ -93,7 +94,15 @@ function dragElement(el, handleSelector) {
 }
 
 dragElement(document.getElementById('welcome'), '#welcomeheader');
-dragElement(document.getElementById('Vaianaapp-window'));
+dragElement(document.getElementById('Vaianaapp-window'), 'h2');
+dragElement(document.getElementById('aboutwindow'));
+
+const navButtons = document.querySelectorAll('.nav-button');
+navButtons.forEach((button) => {
+  button.addEventListener('mousedown', (e) => e.stopPropagation());
+  button.addEventListener('pointerdown', (e) => e.stopPropagation());
+  button.addEventListener('click', (e) => e.stopPropagation());
+});
 
 function addWindowTapHandling(element) {
   if (!element) return;
@@ -110,3 +119,13 @@ function handleWindowTap(element) {
 
 var topBar = document.querySelector("#top")
 
+// define the open button element (may be null if not present in DOM)
+const aboutwindowOpenBtn = document.getElementById('aboutwindowopen');
+const aboutwindowCloseBtn = document.getElementById('aboutwindowclose');
+if (aboutwindowOpenBtn) aboutwindowOpenBtn.addEventListener('click', () => openWindowById('aboutwindow'));
+if (aboutwindowCloseBtn) aboutwindowCloseBtn.addEventListener('click', (e) => { e.stopPropagation(); closeWindowById('aboutwindow'); });
+
+if (aboutwindowCloseBtn) {
+  aboutwindowCloseBtn.addEventListener('mousedown', (e) => e.stopPropagation());
+  aboutwindowCloseBtn.addEventListener('pointerdown', (e) => e.stopPropagation());
+}
