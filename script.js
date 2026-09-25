@@ -126,10 +126,9 @@ function dragElement(el, handleSelector) {
 }
 
 dragElement(document.getElementById('welcome'), '#welcomeheader');
-dragElement(document.getElementById('Vaianaapp-window'), 'h2');
-dragElement(document.getElementById('aboutwindow'));
-dragElement(document.getElementById('SettingsAppwindow'));
-
+dragElement(document.getElementById('Vaianaapp-window'), '#VaianaAppwindowheader');
+dragElement(document.getElementById('aboutwindow'), '#aboutwindowheader');
+dragElement(document.getElementById('SettingsAppwindow'), '#SettingsAppwindowheader');
 
 
 const navButtons = document.querySelectorAll('.nav-button');
@@ -171,7 +170,6 @@ if (aboutLink) {
   aboutLink.addEventListener('pointerdown', (e) => e.stopPropagation());
 }
 
-// Wallpaper selection and persistence
 document.addEventListener('DOMContentLoaded', () => {
   const wallpaperThumbs = Array.from(document.querySelectorAll('.wallpaper-thumb'));
   const saved = localStorage.getItem('moanaos.wallpaper');
