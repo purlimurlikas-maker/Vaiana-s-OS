@@ -19,6 +19,16 @@ function closeWindowById(id) {
   }
 }
 
+function dragElement(el, handleSelector) {
+  if (!el) return;
+  const handle = handleSelector ? el.querySelector(handleSelector) : el;
+  if (!handle) return;
+
+  let dragState = null;
+
+  handle.addEventListener('mousedown', startDrag);
+  }
+
 const welcomeOpenBtn = document.getElementById('welcomeopen');
 const welcomeCloseBtn = document.getElementById('welcomeclose');
 if (welcomeOpenBtn) welcomeOpenBtn.addEventListener('click', () => openWindowById('welcome'));
@@ -47,7 +57,29 @@ if (vaianaWindowClose) {
 
 document.addEventListener('DOMContentLoaded', () => {
   
-  const appWin = document.getElementById('Vaianaapp-window');
+  const appWin = document.getElementById('SettingsAppicon');
+  if (appWin) appWin.style.display = 'none';
+});
+
+const SettingsApp = document.getElementById('SettingsApp');
+const SettingsAppwindowClose = document.getElementById('SettingsAppwindowclose');
+
+if (SettingsApp) {
+  SettingsApp.addEventListener('click', () => {
+    SettingsApp.classList.add('selected');
+    openWindowById('SettingsAppwindow');
+  });
+}
+
+if (SettingsAppwindowclose) {
+  SettingsAppwindowclose.addEventListener('mousedown', (e) => e.stopPropagation());
+  SettingsAppwindowclose.addEventListener('pointerdown', (e) => e.stopPropagation());
+  SettingsAppwindowclose.addEventListener('click', (e) => { e.stopPropagation(); closeWindowById('SettingsAppwindow'); });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  
+  const appWin = document.getElementById('SettingsAppwindow');
   if (appWin) appWin.style.display = 'none';
 });
 
@@ -96,6 +128,9 @@ function dragElement(el, handleSelector) {
 dragElement(document.getElementById('welcome'), '#welcomeheader');
 dragElement(document.getElementById('Vaianaapp-window'), 'h2');
 dragElement(document.getElementById('aboutwindow'));
+dragElement(document.getElementById('SettingsAppwindow'));
+
+
 
 const navButtons = document.querySelectorAll('.nav-button');
 navButtons.forEach((button) => {
@@ -119,7 +154,7 @@ function handleWindowTap(element) {
 
 var topBar = document.querySelector("#top")
 
-// define the open button element (may be null if not present in DOM)
+
 const aboutwindowOpenBtn = document.getElementById('aboutwindowopen');
 const aboutwindowCloseBtn = document.getElementById('aboutwindowclose');
 if (aboutwindowOpenBtn) aboutwindowOpenBtn.addEventListener('click', () => openWindowById('aboutwindow'));
@@ -129,3 +164,38 @@ if (aboutwindowCloseBtn) {
   aboutwindowCloseBtn.addEventListener('mousedown', (e) => e.stopPropagation());
   aboutwindowCloseBtn.addEventListener('pointerdown', (e) => e.stopPropagation());
 }
+
+const aboutLink = document.querySelector('.nav-button-moana');
+if (aboutLink) {
+  aboutLink.addEventListener('mousedown', (e) => e.stopPropagation());
+  aboutLink.addEventListener('pointerdown', (e) => e.stopPropagation());
+}
+
+// Wallpaper selection and persistence
+document.addEventListener('DOMContentLoaded', () => {
+  const wallpaperThumbs = Array.from(document.querySelectorAll('.wallpaper-thumb'));
+  const saved = localStorage.getItem('moanaos.wallpaper');
+  const body = document.body;
+
+  if (saved) {
+    body.style.backgroundImage = `url('${saved}')`;
+    body.style.backgroundSize = 'cover';
+    wallpaperThumbs.forEach(btn => {
+      if (btn.dataset && btn.dataset.url === saved) btn.classList.add('selected');
+      else btn.classList.remove('selected');
+    });
+  }
+
+  wallpaperThumbs.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const url = btn.dataset && btn.dataset.url;
+      if (!url) return;
+      body.style.backgroundImage = `url('${url}')`;
+      body.style.backgroundSize = 'cover';
+      localStorage.setItem('moanaos.wallpaper', url);
+      wallpaperThumbs.forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+    });
+  });
+});

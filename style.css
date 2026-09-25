@@ -26,14 +26,7 @@ h2 {
   font-size: 35px;
 }
 
-text {
-  color: #002f4f;
-  font-family: 'Lobster Two';
-  font-weight: 900;
-  font-style: italic;
-  text-align: center;
-  font-size: 35px;
-}
+
 
 .Welcomepage {
   border: 3px solid #ce491c;
@@ -119,22 +112,36 @@ text {
   font-weight: 700;
   }
 
+#vaianaAppIcon {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  width: 90px;
+}
+
 .vaiana-app-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 90px;
+}
+
+.vaiana-app-icon-img {
   width: 64px;
   height: 64px;
   border-radius: 12px;
   border: 3px solid #40b4fb;
-  }
-
-.Vaianaapp.selected .vaiana-app-icon {
-  border-color: #cafbff;
-  box-shadow: 0 0 0 6px rgba(255,69,0,0.12);
+  display: block;
+  position: static;
 }
+
+.app-name { text-align: center; font-family: cursive; font-weight: 900; font-style: italic; font-size: clamp(0.75rem, 2vw, 1rem); margin-top: 5px; }
 
 #Vaianaapp-windowclose {
   position: absolute;
-  top: 10px;
-  right: 5px;
+  top: 4px;
+  right: 15px;
   z-index: 10;
   cursor: pointer;
   background-color: #ce491c;
@@ -177,14 +184,6 @@ text {
   padding: 15px 15px 0;
   flex-direction: column;
   margin-bottom: 30px;
-}
-
-.Vaianaapp-window h2 {
-  flex: 0 0 auto;
-  margin: 0 0 12px;
-  padding: 8px 40px 0 0;
-  cursor: move;
-  user-select: none;
 }
 
 .window-content {
@@ -278,6 +277,90 @@ text {
 }
 
 #aboutwindowclose {
+  position: absolute;
+  right: 17px;
+  z-index: 10;
+  cursor: pointer;
+  background-color: #ce491c;
+  border-radius: 10px;
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+#SettingsApp {
+  position: absolute;
+  top: 20px;
+  left: 170px;
+  width: 90px;
+}
+
+.settings-app{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 90px;
+}
+
+.settings-app-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  border: 3px solid #40b4fb;
+  position: static;
+}
+
+#SettingsAppwindow {
+  position: absolute;
+  top: 15vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(55rem, calc(100vw - 32px));
+  max-height: calc(100vh - 120px);
+  background: #cafbff;
+  border: 3px solid #ce491c;
+  border-radius: 12px;
+  box-sizing: border-box;
+  overflow: hidden;
+  display: none;
+  z-index: 100;
+  padding: 15px 15px 0;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.settings-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 680px;
+  margin: 12px auto;
+  color: #002f4f;
+}
+.settings-controls label { display: flex; flex-direction: column; font-weight: 700; }
+.settings-buttons button, .settings-controls button {
+  padding: 8px 12px; border-radius: 8px; border: none; background:#cafbff; color:#002f4f; cursor: pointer;
+}
+
+.wallpaper-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin: 8px 0 16px 0;
+}
+.wallpaper-thumb {
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  overflow: hidden;
+  background: none;
+  cursor: pointer;
+}
+.wallpaper-thumb img { display:block; width:100%; height:64px; object-fit:cover; }
+.wallpaper-thumb.selected { border-color: #40b4fb; box-shadow: 0 0 0 4px rgba(122,195,143,0.12); }
+
+#SettingsAppwindowclose {
   position: absolute;
   right: 17px;
   z-index: 10;
