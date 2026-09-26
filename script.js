@@ -130,6 +130,8 @@ dragElement(document.getElementById('welcome'), '#welcomeheader', 175);
 dragElement(document.getElementById('Vaianaapp-window'), '#VaianaAppwindowheader', 175);
 dragElement(document.getElementById('aboutwindow'), '#aboutwindowheader', 175);
 dragElement(document.getElementById('SettingsAppwindow'), '#SettingsAppwindowheader', 175);
+dragElement(document.getElementById('playlist'), '#playlistheader', 175);
+
 
 
 
@@ -200,3 +202,12 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+const playlistOpenBtn = document.getElementById('playlistopen');
+const playlistCloseBtn = document.getElementById('playlistclose');
+if (playlistOpenBtn) playlistOpenBtn.addEventListener('click', () => openWindowById('playlist'));
+if (playlistCloseBtn) playlistCloseBtn.addEventListener('click', (e) => { e.stopPropagation(); closeWindowById('playlist'); });
+
+if (playlistCloseBtn) {
+  playlistCloseBtn.addEventListener('mousedown', (e) => e.stopPropagation());
+  playlistCloseBtn.addEventListener('pointerdown', (e) => e.stopPropagation());
+}
