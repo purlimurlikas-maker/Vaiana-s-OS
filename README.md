@@ -4,10 +4,10 @@ Try it: https://purlimurlikas-maker.github.io/MoanaOS/
 To use the OS, just open the link on your COMPUTER/LAPTOP, otherwise it wont be a great experience. For the best experience use full screen, otherwise the content will be quite cramped together.
 
 Features: 
-• Top bar with a clock
-• Settings app, where you can change the background
-• Character app, which tells you about the characters
-• About Moana window
-• Moana's official playlist
+<p>• Top bar with a clock</p>
+<p>• Settings app, where you can change the background</p>
+<p>• Character app, which tells you about the characters</p>
+<p>• About Moana window</p>
+<p>• Moana's official playlist</p>
 
 Acknowledgements: I used the guide https://jams.hackclub.com/batch/webOS, and I used AI to help me understand my code (especially script.js), and I used it to help me fix my problems.
