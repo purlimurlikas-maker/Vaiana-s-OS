@@ -34,13 +34,14 @@ h2 {
   padding-bottom: 25px;
   border-radius: 12px;
   position: absolute;
-  top: 130px;
+  top: 170px;
   left: 50%;
   transform: translateX(-50%);
   background-color: #cafbff;
   display: block;
   z-index: 1;
-  height: 500px;
+  height: auto;
+  max-height: calc(100vh - 200px);
   overflow-y: hidden;
 }
 
@@ -170,7 +171,7 @@ h2 {
   left: 50%;
   transform: translateX(-50%);
   width: min(55rem, calc(100vw - 32px));
-  max-height: 520px;
+  max-height: calc(100vh - 200px);
   background: #cafbff;
   border: 3px solid #ce491c;
   border-radius: 12px;
@@ -422,4 +423,8 @@ display:flex;
   padding-top: 170px; 
   max-height: 60vh;
   box-sizing: border-box;
+}
+
+.Welcomepage, .Vaianaapp-window {
+  max-height: calc(100vh - 190px);
 }

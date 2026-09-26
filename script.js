@@ -4,7 +4,7 @@ function openWindowById(id) {
   if (!el) return;
   el.style.display = id === 'Vaianaapp-window' ? 'flex' : 'block';
   el.style.left = '50%';
-  el.style.top = '20vh';
+  el.style.top = id === 'welcome' || id === 'Vaianaapp-window' ? '180px' : '200px';
   el.style.transform = 'translateX(-50%)';
 }
 
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (appWin) appWin.style.display = 'none';
 });
 
-function dragElement(el, handleSelector) {
+function dragElement(el, handleSelector, minTop) {
   if (!el) return;
   const handle = handleSelector ? el.querySelector(handleSelector) : el;
   if (!handle) return;
@@ -94,7 +94,6 @@ function dragElement(el, handleSelector) {
   function startDrag(e) {
     e.preventDefault();
     const rect = el.getBoundingClientRect();
-    
     if (rect.width === 0 && rect.height === 0) return;
     dragState = {
       startX: e.clientX,
@@ -113,8 +112,11 @@ function dragElement(el, handleSelector) {
     if (!dragState) return;
     const dx = e.clientX - dragState.startX;
     const dy = e.clientY - dragState.startY;
+
+    let newTop = dragState.top + dy;
+    if (minTop !== undefined) newTop = Math.max(newTop, minTop);;
     el.style.left = `${dragState.left + dx}px`;
-   el.style.top = `${Math.max(dragState.top + dy, 150)}px`;
+    el.style.top = `${newTop}px`;
   }
 
   function stopDrag() {
@@ -124,10 +126,11 @@ function dragElement(el, handleSelector) {
   }
 }
 
-dragElement(document.getElementById('welcome'), '#welcomeheader');
-dragElement(document.getElementById('Vaianaapp-window'), '#VaianaAppwindowheader');
-dragElement(document.getElementById('aboutwindow'), '#aboutwindowheader');
-dragElement(document.getElementById('SettingsAppwindow'), '#SettingsAppwindowheader');
+dragElement(document.getElementById('welcome'), '#welcomeheader', 175);
+dragElement(document.getElementById('Vaianaapp-window'), '#VaianaAppwindowheader', 175);
+dragElement(document.getElementById('aboutwindow'), '#aboutwindowheader', 175);
+dragElement(document.getElementById('SettingsAppwindow'), '#SettingsAppwindowheader', 175);
+
 
 
 const navButtons = document.querySelectorAll('.nav-button');
