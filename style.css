@@ -391,8 +391,9 @@ h2 {
   color: #002f4f;
   }
 
-.settings-app-icon.selected {
-  border-color: #cafbff;
+#vaianaAppIcon.selected .vaiana-app-icon-img,
+#SettingsApp.selected .settings-app-icon {
+  border-color: #ce491c;
   box-shadow: 0 0 0 6px rgba(255,215,0,0.12);
 }
 

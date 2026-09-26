@@ -16,6 +16,10 @@ function closeWindowById(id) {
   if (id === 'Vaianaapp-window' && vaianaApp) {
     vaianaApp.classList.remove('selected');
   }
+
+  if (id === 'SettingsAppwindow' && SettingsApp) {
+    SettingsApp.classList.remove('selected');
+  }
 }
 
 function dragElement(el, handleSelector) {
