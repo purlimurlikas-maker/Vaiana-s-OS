@@ -1,4 +1,3 @@
-var biggestIndex = 100;
 
 function openWindowById(id) {
   const el = document.getElementById(id);
@@ -95,7 +94,7 @@ function dragElement(el, handleSelector) {
   function startDrag(e) {
     e.preventDefault();
     const rect = el.getBoundingClientRect();
-    // if element is hidden, skip
+    
     if (rect.width === 0 && rect.height === 0) return;
     dragState = {
       startX: e.clientX,
@@ -115,7 +114,7 @@ function dragElement(el, handleSelector) {
     const dx = e.clientX - dragState.startX;
     const dy = e.clientY - dragState.startY;
     el.style.left = `${dragState.left + dx}px`;
-    el.style.top = `${dragState.top + dy}px`;
+   el.style.top = `${Math.max(dragState.top + dy, 150)}px`;
   }
 
   function stopDrag() {
@@ -147,7 +146,7 @@ function handleWindowTap(element) {
   biggestIndex++;
   element.style.zIndex = biggestIndex;
   const topBar = document.querySelector('#top');
-  if (topBar) topBar.style.zIndex = biggestIndex + 1;
+if (topBar) topBar.style.zIndex = '999999';
   if (typeof deselectIcon === 'function' && window.selectedIcon) deselectIcon(window.selectedIcon);
 }
 
@@ -197,3 +196,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+

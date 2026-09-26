@@ -3,7 +3,7 @@ body {
   font-family: 'Lobster Two', sans-serif;
   font-size: 17px;
   margin: 0;
-  padding: 0;
+  padding: 70px;
   position: relative;
   color: #ffffff;
 
@@ -21,7 +21,6 @@ h2 {
   color: #002f4f;
   font-family: 'Lobster Two';
   font-weight: 900;
-  font-style: italic;
   text-align: center;
   font-size: 35px;
 }
@@ -32,15 +31,17 @@ h2 {
   border: 3px solid #ce491c;
   width: 45rem;
   padding: 15px;
+  padding-bottom: 25px;
   border-radius: 12px;
   position: absolute;
-  top: 20vh;
+  top: 130px;
   left: 50%;
   transform: translateX(-50%);
   background-color: #cafbff;
   display: block;
   z-index: 1;
-  height: 590px;
+  height: 500px;
+  overflow-y: hidden;
 }
 
 .window-header {
@@ -56,7 +57,7 @@ h2 {
 }
 
 .headerpic {
-    margin: 10px; width: 50px; border-radius: 30px;
+    margin: 5px; width: 50px; border-radius: 30px;
     }
 
 #timeElement {
@@ -64,15 +65,8 @@ h2 {
   font-weight: bold;
 }
 
-#pic1 {
-    border: solid #ce491c; border-radius: 15px; width: 18rem; margin: 10px;
-    }
 
 #pic2 {
-    border: solid #ce491c; border-radius: 15px; width: 23rem; margin: 10px;
-    }
-
-#pic3 {
     border: solid #ce491c; border-radius: 15px; width: 20rem; margin: 10px;
     }
 
@@ -138,7 +132,7 @@ h2 {
   position: static;
 }
 
-.app-name { text-align: center; font-family: cursive; font-weight: 900; font-style: italic; font-size: clamp(0.75rem, 2vw, 1rem); margin-top: 5px; }
+.app-name { text-align: center; font-weight: 900; font-size: clamp(0.75rem, 2vw, 1rem); margin-top: 5px; }
 
 #Vaianaapp-windowclose {
   position: absolute;
@@ -172,18 +166,18 @@ h2 {
 
 .Vaianaapp-window {
   position: absolute;
-  top: 15vh;
+  top: 170px;
   left: 50%;
   transform: translateX(-50%);
   width: min(55rem, calc(100vw - 32px));
-  max-height: calc(100vh - 120px);
+  max-height: 520px;
   background: #cafbff;
   border: 3px solid #ce491c;
   border-radius: 12px;
   box-sizing: border-box;
   overflow: hidden;
   display: none;
-  z-index: 100;
+  z-index: 10;
   padding: 15px 15px 0;
   flex-direction: column;
   margin-bottom: 30px;
@@ -245,7 +239,7 @@ h2 {
   scroll-margin-top: 20px;
 }
 
-.aboutwindow { border: 3px solid #ce491c; background-color: #cafbff; border-radius: 10px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); width: 24rem; height: 29rem; font-weight: 900; font-style: italic; text-align: justify; font-size: 20px; padding: 10px; position: absolute; top: 270px; left: 83%; transform: translateX(-50%); justify-content: space-between; display: flex; flex-direction: column; z-index: 2; padding-right: 15px;}
+.aboutwindow { border: 3px solid #ce491c; background-color: #cafbff; border-radius: 10px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); width: 24rem; height: 29rem; font-weight: 900; text-align: justify; font-size: 20px; padding: 10px; position: absolute; top: 250px; left: 83%; justify-content: space-between; display: none; flex-direction: column; z-index: 11; padding-right: 15px;}
 
 .nav-button-moana {
   display: flex;
@@ -319,10 +313,10 @@ h2 {
 
 #SettingsAppwindow {
   position: absolute;
-  top: 15vh;
   left: 50%;
+  top: 300px;
   transform: translateX(-50%);
-  width: min(55rem, calc(100vw - 32px));
+  width: 800px;
   height: 500px;
   background: #cafbff;
   border: 3px solid #ce491c;
@@ -330,7 +324,7 @@ h2 {
   box-sizing: border-box;
   overflow-y: auto;
   display: none;
-  z-index: 100;
+  z-index: 10;
   padding: 15px 15px 0;
   flex-direction: column;
   margin-bottom: 30px;
@@ -396,4 +390,36 @@ h2 {
   color: #002f4f;
   }
 
+.settings-app-icon.selected {
+  border-color: #cafbff;
+  box-shadow: 0 0 0 6px rgba(255,215,0,0.12);
+}
 
+#top {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 175px;              
+z-index: 100;
+backdrop-filter: blur(10px);
+background-color: rgba(0, 0, 0, 0.25);
+justify-content: space-evenly;
+border-bottom: 0.5px solid #40b4fb;
+}
+
+
+.header {
+display:flex;
+ flex-direction: column;
+ left: 600px;
+ padding: 0;
+
+ }
+
+ .desktop {
+  position: relative;
+  padding-top: 170px; 
+  max-height: 60vh;
+  box-sizing: border-box;
+}

@@ -9,17 +9,16 @@
     <link rel="stylesheet" href="style.css" />
   </head>
 
-  <header>
-      <h1>MoanaOS</h1>
-    </header>
+  <div id="top">
+      <header class="header">
+      <h1 class="title">MoanaOS</h1>
+      
+   
     
   <body style="background-image: url('https://i.pinimg.com/736x/8e/2f/e1/8e2fe165614121ec44155028cb334aa1.jpg'); background-size: cover; height: 100vh">
     <p id="timeElement">Time</p>
 
-    <div id="top"></div>
-
-
-    <script>
+   <script>
       setInterval(() => {
         const timeNode = document.querySelector("#timeElement");
         if (timeNode) {
@@ -27,10 +26,30 @@
         }
       }, 1000);
     </script>
+    </header>
+
+    <div id="vaianaAppIcon"> 
+      <div class="vaiana-app-icon">
+      <img class="vaiana-app-icon-img" draggable="false" src="https://i.pinimg.com/1200x/bf/20/a4/bf20a46c229540719c9717d2becce610.jpg">
+      <p class="app-name">Characters</p>
+    </div>
+    </div>
+
+   <div id="Settings">
+    <div id="SettingsApp" class="settings-app">
+      <img class="settings-app-icon" draggable="false" src="https://i.pinimg.com/736x/cd/27/f0/cd27f0895d68635a550354a4cd60bfa8.jpg">
+      <p class="app-name">Settings</p>
+    </div>
 
     <p style="cursor: pointer" id="welcomeopen">Welcome page</p>
     <p style="cursor: pointer" id="aboutwindowopen">About Moana</p>
+  
+  </div>
 
+    </div>
+
+
+<div class="desktop">
     <div id="welcome" class="Welcomepage">
       <div class="welcome-content">
       <p id="welcomeheader">
@@ -40,24 +59,15 @@
       <h2>Welcome to MoanaOS</h2>
       <p id="introduction">This is a WebOS made about Moana.</p>
       <div>
-        <iframe data-testid="embed-iframe" style="border-radius:12px; margin: 10px;" src="https://open.spotify.com/embed/album/78z8nnWbB2ytMI1ngOv4Vo?utm_source=generator&si=137a4ee38ae74b62" width="98%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-        <p id="quote1">"Okay, first, I'm not a princess, I'm the daughter of the chief."-Moana</p>
         <p id="quote2">"Sometimes, who we wish we were, what we wish we could do, it's just not meant to be."-Sina</p>
-        <img id="pic1" src="https://i.pinimg.com/736x/72/cb/8a/72cb8aba40e7c61620e62200dc53f707.jpg" alt="Vaiana image" />
         <img id="pic2" src="https://i.pinimg.com/originals/da/7b/39/da7b399c3d76c5d9c1c2b3a47aa0e953.gif" alt="Vaiana gif" />
-        <img id="pic3" src="https://i.pinimg.com/originals/4d/7e/9b/4d7e9b47c21cc3ca55c9a99b588003d9.gif" alt="Vaiana gif" />
         <img id="pic4" src="https://i.pinimg.com/originals/1a/b4/d6/1ab4d649001603281fd1b3418969ab27.gif" alt="Vaiana gif" />
       </div>
       </div>
     </div>
 
 
- <div id="vaianaAppIcon"> 
-      <div class="vaiana-app-icon">
-      <img class="vaiana-app-icon-img" draggable="false" src="https://i.pinimg.com/1200x/bf/20/a4/bf20a46c229540719c9717d2becce610.jpg">
-      <p class="app-name">Characters</p>
-    </div>
-    </div>
+
 
 
       <div id="Vaianaapp-window" class="Vaianaapp-window">
@@ -246,13 +256,6 @@
       <img id="pic5" src="https://i.pinimg.com/originals/a1/4b/8d/a14b8d7968fa1966da6e021964658796.gif">
     </div>
 
-<div id="Settings">
-    <div id="SettingsApp" class="settings-app">
-      <img class="settings-app-icon" draggable="false" src="https://i.pinimg.com/736x/cd/27/f0/cd27f0895d68635a550354a4cd60bfa8.jpg">
-      <p class="app-name">Settings</p>
-    </div>
-  </div>
-
   
 
 <div id="SettingsAppwindow" style="display:none;">
@@ -281,6 +284,7 @@
       </div>
       </div>
     </section>
+  </div>
   </div>
 </div>
 
